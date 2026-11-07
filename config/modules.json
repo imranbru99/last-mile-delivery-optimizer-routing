@@ -1,0 +1,1687 @@
+{
+  "modules": [
+    {
+      "key": "core",
+      "name": "Business & Organization",
+      "category": "core",
+      "icon": "heroicon-o-building-office-2",
+      "dependencies": [],
+      "default": true,
+      "tier": "core",
+      "description": "Business profile, branding, localization, currency, timezone, and units.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Business & Organization features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "users_roles",
+      "name": "Users, Roles & Permissions",
+      "category": "core",
+      "icon": "heroicon-o-users",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "core",
+      "description": "Teams, invitations, granular permissions, custom role builder, 2FA, login history.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Users, Roles & Permissions features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "notifications_center",
+      "name": "Notifications Center",
+      "category": "core",
+      "icon": "heroicon-o-bell",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "core",
+      "description": "In-app notification inbox, preferences, and activity feed.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Notifications Center features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "audit_log",
+      "name": "Activity & Audit Log",
+      "category": "core",
+      "icon": "heroicon-o-clipboard-document-list",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "core",
+      "description": "Tamper-evident audit trail of sensitive actions.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Activity & Audit Log features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "file_manager",
+      "name": "File Manager",
+      "category": "core",
+      "icon": "heroicon-o-folder",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "core",
+      "description": "Secure media and document storage per business.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to File Manager features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "api_tokens",
+      "name": "API Tokens",
+      "category": "core",
+      "icon": "heroicon-o-key",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "core",
+      "description": "Sanctum personal access tokens with scopes and rate limits.",
+      "always_on": true,
+      "version": "1.0.0",
+      "what_you_lose": "Access to API Tokens features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "orders",
+      "name": "Orders & Shipments",
+      "category": "orders",
+      "icon": "heroicon-o-cube",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Single/bulk create, CSV/Excel import-export, API intake, labels, barcodes/QR.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Orders & Shipments features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "address_book",
+      "name": "Address Book & Geocoding",
+      "category": "orders",
+      "icon": "heroicon-o-map-pin",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Autocomplete, validation, geofences, duplicate detection, multi-language cleaning.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Address Book & Geocoding features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "pickups",
+      "name": "Pickup Management",
+      "category": "orders",
+      "icon": "heroicon-o-truck",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Scheduled and recurring pickups with dedicated pickup routes.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Pickup Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "returns",
+      "name": "Returns / Reverse Logistics",
+      "category": "orders",
+      "icon": "heroicon-o-arrow-uturn-left",
+      "dependencies": [
+        "orders"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "RMA return pickups, QC, and restock workflows.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Returns / Reverse Logistics features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "multi_leg",
+      "name": "Multi-leg Hub-and-Spoke",
+      "category": "orders",
+      "icon": "heroicon-o-arrows-right-left",
+      "dependencies": [
+        "orders",
+        "hubs"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "First-mile, middle-mile, and last-mile leg orchestration.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Multi-leg Hub-and-Spoke features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "cod",
+      "name": "Cash on Delivery",
+      "category": "orders",
+      "icon": "heroicon-o-banknotes",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "COD collection, reconciliation, and merchant remittance.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Cash on Delivery features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "pod",
+      "name": "Proof of Delivery",
+      "category": "orders",
+      "icon": "heroicon-o-camera",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Photo, signature, OTP, geotag, barcode scan, ID check.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Proof of Delivery features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "attempts",
+      "name": "Delivery Attempts & Exceptions",
+      "category": "orders",
+      "icon": "heroicon-o-exclamation-triangle",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Failed reasons, auto re-attempt rules, reschedule, RTS.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Delivery Attempts & Exceptions features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "route_optimization",
+      "name": "Route Optimization Engine",
+      "category": "routing",
+      "icon": "heroicon-o-map",
+      "dependencies": [
+        "orders",
+        "fleet"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "VRP solver with capacity, time windows, skills, multi-depot, traffic-aware ETA.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Route Optimization Engine features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "dynamic_reopt",
+      "name": "Dynamic Re-optimization",
+      "category": "routing",
+      "icon": "heroicon-o-arrow-path",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Insert/cancel orders, traffic delays, breakdowns; re-sequence in-flight routes.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Dynamic Re-optimization features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "recurring_routes",
+      "name": "Multi-day & Recurring Routes",
+      "category": "routing",
+      "icon": "heroicon-o-calendar-days",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Templates, standing routes, and territory routes across days.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Multi-day & Recurring Routes features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "territories",
+      "name": "Territory & Zone Management",
+      "category": "routing",
+      "icon": "heroicon-o-globe-alt",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Draw polygons, assign drivers/hubs, zone pricing and auto-assign.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Territory & Zone Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "dispatch_board",
+      "name": "Dispatch Board",
+      "category": "routing",
+      "icon": "heroicon-o-squares-2x2",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Drag-and-drop Kanban, map, and Gantt dispatch views.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Dispatch Board features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "scenario_simulator",
+      "name": "Scenario Simulator",
+      "category": "routing",
+      "icon": "heroicon-o-beaker",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "What-if side-by-side comparison of cost, time, km, and emissions.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Scenario Simulator features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "auto_assignment",
+      "name": "Auto-Assignment Rules",
+      "category": "routing",
+      "icon": "heroicon-o-sparkles",
+      "dependencies": [
+        "dispatch_board"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Nearest driver, load balance, skill match, rating, SLA priority.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Auto-Assignment Rules features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "batching_waves",
+      "name": "Batching & Wave Planning",
+      "category": "routing",
+      "icon": "heroicon-o-queue-list",
+      "dependencies": [
+        "route_optimization",
+        "hubs"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Cut-off times, waves, consolidation, and cross-docking.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Batching & Wave Planning features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "fleet_mix",
+      "name": "Fleet Mix Optimizer",
+      "category": "routing",
+      "icon": "heroicon-o-chart-pie",
+      "dependencies": [
+        "route_optimization",
+        "fleet"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Recommend optimal vehicle types and fleet size.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Fleet Mix Optimizer features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "live_tracking",
+      "name": "Live Tracking Map",
+      "category": "live",
+      "icon": "heroicon-o-signal",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Real-time driver positions, geofence alerts, playback/history.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Live Tracking Map features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "driver_pwa",
+      "name": "Driver Mobile PWA",
+      "category": "live",
+      "icon": "heroicon-o-device-phone-mobile",
+      "dependencies": [
+        "live_tracking",
+        "pod"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Offline-first stop list, GPS pings, nav deep links, POD, SOS.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Driver Mobile PWA features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "customer_tracking",
+      "name": "Customer Tracking Portal",
+      "category": "live",
+      "icon": "heroicon-o-eye",
+      "dependencies": [
+        "orders",
+        "live_tracking"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Public tracking by code/phone with branded live ETA map.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Customer Tracking Portal features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "eta_prediction",
+      "name": "ETA Prediction & Delay Alerts",
+      "category": "live",
+      "icon": "heroicon-o-clock",
+      "dependencies": [
+        "live_tracking"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Historical + traffic + AI-assisted ETA with delay notifications.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to ETA Prediction & Delay Alerts features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "notifications_hub",
+      "name": "Omnichannel Notifications Hub",
+      "category": "live",
+      "icon": "heroicon-o-chat-bubble-left-right",
+      "dependencies": [
+        "notifications_center"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "SMS, WhatsApp, Email, Push, Voice; templates; BD SMS gateways.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Omnichannel Notifications Hub features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "delivery_preferences",
+      "name": "Customer Delivery Preferences",
+      "category": "live",
+      "icon": "heroicon-o-adjustments-horizontal",
+      "dependencies": [
+        "customer_tracking"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Time slots, safe-place, neighbor, locker, reschedule, redirect.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Customer Delivery Preferences features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "chat",
+      "name": "Two-way Chat",
+      "category": "live",
+      "icon": "heroicon-o-chat-bubble-oval-left-ellipsis",
+      "dependencies": [
+        "live_tracking"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Driver\u2194customer (masked) and dispatcher\u2194driver messaging.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Two-way Chat features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "exception_center",
+      "name": "Exception Management Center",
+      "category": "live",
+      "icon": "heroicon-o-shield-exclamation",
+      "dependencies": [
+        "attempts"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "SLA breach, failed, damaged, lost \u2014 workflow and escalation.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Exception Management Center features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "fleet",
+      "name": "Vehicle Management",
+      "category": "fleet",
+      "icon": "heroicon-o-truck",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Types, capacity, documents/expiry alerts, assignment history.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Vehicle Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "maintenance",
+      "name": "Maintenance & Inspections",
+      "category": "fleet",
+      "icon": "heroicon-o-wrench-screwdriver",
+      "dependencies": [
+        "fleet"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Schedules, work orders, DVIR checklists, parts.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Maintenance & Inspections features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "fuel",
+      "name": "Fuel & Expense Tracking",
+      "category": "fleet",
+      "icon": "heroicon-o-fire",
+      "dependencies": [
+        "fleet"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Fuel cards, mileage, anomaly detection.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Fuel & Expense Tracking features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "telematics",
+      "name": "Telematics / GPS Devices",
+      "category": "fleet",
+      "icon": "heroicon-o-cpu-chip",
+      "dependencies": [
+        "fleet",
+        "live_tracking"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Generic webhook/MQTT/HTTP ingestion drivers.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Telematics / GPS Devices features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "ev_management",
+      "name": "Electric Vehicle Management",
+      "category": "fleet",
+      "icon": "heroicon-o-bolt",
+      "dependencies": [
+        "fleet",
+        "route_optimization"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Charge planning and range-aware routing.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Electric Vehicle Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "assets",
+      "name": "Equipment & Asset Tracking",
+      "category": "fleet",
+      "icon": "heroicon-o-archive-box",
+      "dependencies": [
+        "fleet"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Bags, crates, scanners, cold-chain boxes.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Equipment & Asset Tracking features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "cold_chain",
+      "name": "Cold Chain Monitoring",
+      "category": "fleet",
+      "icon": "heroicon-o-thermometer",
+      "dependencies": [
+        "assets"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Sensor readings, alerts, compliance reports.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Cold Chain Monitoring features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "hubs",
+      "name": "Hub & Warehouse Management",
+      "category": "warehouse",
+      "icon": "heroicon-o-building-storefront",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Hubs, bins, inbound scanning, sorting, load-out, manifests.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Hub & Warehouse Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "inventory",
+      "name": "Light WMS Inventory",
+      "category": "warehouse",
+      "icon": "heroicon-o-squares-plus",
+      "dependencies": [
+        "hubs"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Stock per merchant, pick/pack, cycle count.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Light WMS Inventory features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "lockers",
+      "name": "Lockers / PUDO Points",
+      "category": "warehouse",
+      "icon": "heroicon-o-lock-closed",
+      "dependencies": [
+        "hubs",
+        "orders"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Locker/agent points, capacity, OTP pickup.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Lockers / PUDO Points features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "cross_dock",
+      "name": "Cross-dock & Transfer Manifests",
+      "category": "warehouse",
+      "icon": "heroicon-o-arrows-up-down",
+      "dependencies": [
+        "hubs",
+        "multi_leg"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Transfer manifests between hubs and partners.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Cross-dock & Transfer Manifests features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "drivers",
+      "name": "Driver Management",
+      "category": "people",
+      "icon": "heroicon-o-identification",
+      "dependencies": [
+        "users_roles"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Onboarding, documents, ratings, scorecards, gamification.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Driver Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "attendance",
+      "name": "Attendance & Shifts",
+      "category": "people",
+      "icon": "heroicon-o-finger-print",
+      "dependencies": [
+        "drivers"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Biometric/RFID/app/geofenced check-in via Attendance Hub.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Attendance & Shifts features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "payroll",
+      "name": "Payroll & Driver Payouts",
+      "category": "people",
+      "icon": "heroicon-o-currency-dollar",
+      "dependencies": [
+        "drivers"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Per-delivery/km/hour/commission payouts with Unicode PDF payslips.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Payroll & Driver Payouts features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "hr_lite",
+      "name": "HR-lite",
+      "category": "people",
+      "icon": "heroicon-o-briefcase",
+      "dependencies": [
+        "users_roles"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Staff directory, contracts, documents, announcements.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to HR-lite features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "gig_marketplace",
+      "name": "Gig Driver Marketplace",
+      "category": "people",
+      "icon": "heroicon-o-megaphone",
+      "dependencies": [
+        "drivers",
+        "dispatch_board"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Open jobs, bidding, instant payout requests.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Gig Driver Marketplace features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "subcontractors",
+      "name": "Subcontractor / Carrier Management",
+      "category": "people",
+      "icon": "heroicon-o-building-library",
+      "dependencies": [
+        "orders"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Rate cards, auto-routing to partner carriers, partner API.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Subcontractor / Carrier Management features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "pricing",
+      "name": "Pricing Engine / Rate Cards",
+      "category": "finance",
+      "icon": "heroicon-o-tag",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Zone/distance/weight/volume/service/surge/contract pricing.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Pricing Engine / Rate Cards features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "invoicing",
+      "name": "Invoicing & Billing",
+      "category": "finance",
+      "icon": "heroicon-o-document-text",
+      "dependencies": [
+        "pricing"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Shipment/periodic/consolidated invoices, taxes, multi-currency Unicode PDFs.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Invoicing & Billing features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "payments",
+      "name": "Payments",
+      "category": "finance",
+      "icon": "heroicon-o-credit-card",
+      "dependencies": [
+        "invoicing"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Stripe, SSLCommerz, bKash/Nagad, PayPal, wallets, prepaid balance.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Payments features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "cod_settlement",
+      "name": "COD Settlement & Remittance",
+      "category": "finance",
+      "icon": "heroicon-o-scale",
+      "dependencies": [
+        "cod",
+        "invoicing"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "COD reconciliation and merchant remittance batches.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to COD Settlement & Remittance features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "expenses",
+      "name": "Expenses & Accounting-lite",
+      "category": "finance",
+      "icon": "heroicon-o-calculator",
+      "dependencies": [
+        "core"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Ledger, P&L, cash book, accounting exports.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Expenses & Accounting-lite features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "profitability",
+      "name": "Profitability Analytics",
+      "category": "finance",
+      "icon": "heroicon-o-chart-bar",
+      "dependencies": [
+        "invoicing",
+        "route_optimization"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Cost per delivery/km/route/customer/zone.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Profitability Analytics features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "saas_billing",
+      "name": "Subscriptions & SaaS Billing",
+      "category": "finance",
+      "icon": "heroicon-o-receipt-percent",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "platform",
+      "description": "Plans, per-module pricing, trials, metering, dunning (Super Admin).",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Subscriptions & SaaS Billing features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "crm",
+      "name": "CRM",
+      "category": "sales",
+      "icon": "heroicon-o-user-group",
+      "dependencies": [
+        "core"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Merchants/leads, pipeline, quotes, contracts, follow-ups.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to CRM features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "lead_gen",
+      "name": "Lead Generation via Scraping",
+      "category": "sales",
+      "icon": "heroicon-o-magnifying-glass",
+      "dependencies": [
+        "crm"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "AI Catalog scrapes public directories into lead lists with compliance toggles.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Lead Generation via Scraping features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "ticketing",
+      "name": "Support Ticketing & Helpdesk",
+      "category": "sales",
+      "icon": "heroicon-o-ticket",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "SLA, canned replies, macros, omnichannel tickets.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Support Ticketing & Helpdesk features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "feedback",
+      "name": "Feedback, Ratings & NPS",
+      "category": "sales",
+      "icon": "heroicon-o-star",
+      "dependencies": [
+        "orders"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Post-delivery surveys, driver rating, review moderation.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Feedback, Ratings & NPS features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "loyalty",
+      "name": "Loyalty, Tips & Referral",
+      "category": "sales",
+      "icon": "heroicon-o-gift",
+      "dependencies": [
+        "orders"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Loyalty points, tipping, and referral programs.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Loyalty, Tips & Referral features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "merchant_portal",
+      "name": "Merchant Portal & E-commerce Plugins",
+      "category": "sales",
+      "icon": "heroicon-o-shopping-bag",
+      "dependencies": [
+        "orders",
+        "api_tokens"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Shopify/Woo/Magento connectors, webhooks, merchant self-service.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Merchant Portal & E-commerce Plugins features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "ai_copilot",
+      "name": "AI Dispatcher Copilot",
+      "category": "ai",
+      "icon": "heroicon-o-cpu-chip",
+      "dependencies": [
+        "dispatch_board"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Chat with ops data, suggestions, route decision explanations via AI Hub.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to AI Dispatcher Copilot features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "demand_forecast",
+      "name": "Demand Forecasting",
+      "category": "ai",
+      "icon": "heroicon-o-presentation-chart-line",
+      "dependencies": [
+        "orders"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Capacity planning from historical demand patterns.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Demand Forecasting features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "ai_address",
+      "name": "AI Address Cleaner & Translation",
+      "category": "ai",
+      "icon": "heroicon-o-language",
+      "dependencies": [
+        "address_book"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Any-language address cleaning and translation via AI Hub.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to AI Address Cleaner & Translation features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "smart_eta",
+      "name": "Smart ETA & Delay Prediction",
+      "category": "ai",
+      "icon": "heroicon-o-light-bulb",
+      "dependencies": [
+        "eta_prediction"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "AI-enhanced ETA models beyond rule-based prediction.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Smart ETA & Delay Prediction features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "anomaly_fraud",
+      "name": "Anomaly & Fraud Detection",
+      "category": "ai",
+      "icon": "heroicon-o-shield-check",
+      "dependencies": [
+        "pod",
+        "cod"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Fake POD, fuel theft, COD mismatch, GPS spoofing detection.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Anomaly & Fraud Detection features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "ai_support_bot",
+      "name": "AI Customer Support Bot",
+      "category": "ai",
+      "icon": "heroicon-o-chat-bubble-bottom-center-text",
+      "dependencies": [
+        "ticketing",
+        "customer_tracking"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Multi-language tracking, rescheduling, and FAQ bot.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to AI Customer Support Bot features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "nl_reports",
+      "name": "Natural-Language Report Builder",
+      "category": "ai",
+      "icon": "heroicon-o-document-magnifying-glass",
+      "dependencies": [
+        "reports"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Ask for reports in plain language; get charts and exports.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Natural-Language Report Builder features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "automation",
+      "name": "Workflow Automation Builder",
+      "category": "ai",
+      "icon": "heroicon-o-puzzle-piece",
+      "dependencies": [
+        "notifications_hub"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "No-code triggers \u2192 conditions \u2192 actions.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Workflow Automation Builder features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "dashboards",
+      "name": "Role Dashboards",
+      "category": "analytics",
+      "icon": "heroicon-o-home-modern",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Per-role KPI dashboards via Admin Panel widgets.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Role Dashboards features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "reports",
+      "name": "Reports Center",
+      "category": "analytics",
+      "icon": "heroicon-o-document-chart-bar",
+      "dependencies": [
+        "dashboards"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "OTD, FAS, cost/stop, productivity; schedule; PDF/Excel/CSV.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Reports Center features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "sustainability",
+      "name": "Sustainability / Carbon Tracking",
+      "category": "analytics",
+      "icon": "heroicon-o-leaf",
+      "dependencies": [
+        "route_optimization"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "CO\u2082 per route/delivery, green reports, EV share.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Sustainability / Carbon Tracking features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "compliance",
+      "name": "Compliance & Documents",
+      "category": "analytics",
+      "icon": "heroicon-o-document-check",
+      "dependencies": [
+        "drivers",
+        "fleet"
+      ],
+      "default": false,
+      "tier": "growth",
+      "description": "Licences, permits, insurance, HOS rules, audit trail.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Compliance & Documents features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "data_export",
+      "name": "Data Warehouse Export & BI",
+      "category": "analytics",
+      "icon": "heroicon-o-circle-stack",
+      "dependencies": [
+        "reports"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Scheduled warehouse exports and BI connectors.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Data Warehouse Export & BI features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "public_api",
+      "name": "Public API & Webhooks",
+      "category": "analytics",
+      "icon": "heroicon-o-code-bracket",
+      "dependencies": [
+        "api_tokens",
+        "orders"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "REST v1 OpenAPI, scopes, rate limits, webhook retries.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Public API & Webhooks features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "white_label",
+      "name": "White-label & Custom Domains",
+      "category": "platform",
+      "icon": "heroicon-o-paint-brush",
+      "dependencies": [
+        "core"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Per-business branding and custom domains.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to White-label & Custom Domains features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "i18n",
+      "name": "Multi-language & RTL",
+      "category": "platform",
+      "icon": "heroicon-o-language",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "EN/BN/AR/HI/ES/FR with RTL and universal slugs.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Multi-language & RTL features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "multi_currency",
+      "name": "Multi-currency & Timezones",
+      "category": "platform",
+      "icon": "heroicon-o-globe-europe-africa",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Per-business currency and timezone handling.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Multi-currency & Timezones features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "franchise",
+      "name": "Franchise / Multi-branch",
+      "category": "platform",
+      "icon": "heroicon-o-share",
+      "dependencies": [
+        "core"
+      ],
+      "default": false,
+      "tier": "scale",
+      "description": "Sub-business franchise network with commissions.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Franchise / Multi-branch features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "gdpr",
+      "name": "Backup, Import/Export & GDPR",
+      "category": "platform",
+      "icon": "heroicon-o-lock-open",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Data retention, export, erasure, and backup tools.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Backup, Import/Export & GDPR features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "integrations",
+      "name": "Integrations Hub",
+      "category": "platform",
+      "icon": "heroicon-o-puzzle-piece",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "growth",
+      "description": "Maps, routing engines, Twilio, WhatsApp, Firebase, S3, Slack, Zapier.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Integrations Hub features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "help_center",
+      "name": "Help Center & Onboarding Tours",
+      "category": "platform",
+      "icon": "heroicon-o-question-mark-circle",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "starter",
+      "description": "Knowledge base articles and in-app guided tours.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to Help Center & Onboarding Tours features, menus, APIs and public sections.",
+      "settings_schema": []
+    },
+    {
+      "key": "system_health",
+      "name": "System Health",
+      "category": "platform",
+      "icon": "heroicon-o-heart",
+      "dependencies": [
+        "core"
+      ],
+      "default": true,
+      "tier": "platform",
+      "description": "Horizon/queue status, scheduler monitor, error log, Drutogoti panel.",
+      "always_on": false,
+      "version": "1.0.0",
+      "what_you_lose": "Access to System Health features, menus, APIs and public sections.",
+      "settings_schema": []
+    }
+  ],
+  "presets": {
+    "courier": {
+      "name": "Courier / Parcel Company",
+      "modules": [
+        "orders",
+        "address_book",
+        "pickups",
+        "returns",
+        "cod",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "dynamic_reopt",
+        "territories",
+        "dispatch_board",
+        "auto_assignment",
+        "live_tracking",
+        "driver_pwa",
+        "customer_tracking",
+        "eta_prediction",
+        "notifications_hub",
+        "exception_center",
+        "fleet",
+        "hubs",
+        "drivers",
+        "attendance",
+        "pricing",
+        "invoicing",
+        "payments",
+        "cod_settlement",
+        "ticketing",
+        "feedback",
+        "merchant_portal",
+        "dashboards",
+        "reports",
+        "public_api",
+        "i18n",
+        "multi_currency",
+        "integrations",
+        "help_center",
+        "payroll",
+        "maintenance",
+        "fuel",
+        "crm",
+        "automation",
+        "ai_copilot",
+        "ai_address",
+        "scenario_simulator",
+        "recurring_routes",
+        "batching_waves",
+        "chat",
+        "delivery_preferences",
+        "inventory",
+        "lockers",
+        "sustainability",
+        "compliance",
+        "gdpr",
+        "system_health",
+        "saas_billing",
+        "file_manager",
+        "api_tokens"
+      ]
+    },
+    "food": {
+      "name": "Food Delivery",
+      "modules": [
+        "orders",
+        "address_book",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "dynamic_reopt",
+        "dispatch_board",
+        "auto_assignment",
+        "live_tracking",
+        "driver_pwa",
+        "customer_tracking",
+        "eta_prediction",
+        "notifications_hub",
+        "chat",
+        "fleet",
+        "drivers",
+        "attendance",
+        "gig_marketplace",
+        "pricing",
+        "payments",
+        "feedback",
+        "loyalty",
+        "dashboards",
+        "i18n"
+      ]
+    },
+    "grocery": {
+      "name": "Grocery / Quick-Commerce",
+      "modules": [
+        "orders",
+        "address_book",
+        "pickups",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "dynamic_reopt",
+        "batching_waves",
+        "dispatch_board",
+        "live_tracking",
+        "driver_pwa",
+        "customer_tracking",
+        "eta_prediction",
+        "notifications_hub",
+        "delivery_preferences",
+        "fleet",
+        "assets",
+        "cold_chain",
+        "hubs",
+        "inventory",
+        "lockers",
+        "drivers",
+        "attendance",
+        "pricing",
+        "invoicing",
+        "payments",
+        "feedback",
+        "ai_copilot",
+        "demand_forecast",
+        "ai_address",
+        "smart_eta",
+        "dashboards",
+        "reports",
+        "i18n"
+      ]
+    },
+    "ecommerce": {
+      "name": "E-commerce Fulfillment",
+      "modules": [
+        "orders",
+        "address_book",
+        "pickups",
+        "returns",
+        "multi_leg",
+        "cod",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "territories",
+        "dispatch_board",
+        "batching_waves",
+        "live_tracking",
+        "customer_tracking",
+        "notifications_hub",
+        "hubs",
+        "inventory",
+        "cross_dock",
+        "drivers",
+        "pricing",
+        "invoicing",
+        "payments",
+        "cod_settlement",
+        "merchant_portal",
+        "public_api",
+        "dashboards",
+        "reports"
+      ]
+    },
+    "3pl": {
+      "name": "3PL / Warehouse",
+      "modules": [
+        "orders",
+        "address_book",
+        "multi_leg",
+        "pod",
+        "route_optimization",
+        "recurring_routes",
+        "territories",
+        "dispatch_board",
+        "batching_waves",
+        "fleet_mix",
+        "live_tracking",
+        "hubs",
+        "inventory",
+        "cross_dock",
+        "fleet",
+        "drivers",
+        "subcontractors",
+        "pricing",
+        "invoicing",
+        "expenses",
+        "profitability",
+        "crm",
+        "dashboards",
+        "reports",
+        "public_api"
+      ]
+    },
+    "pharmacy": {
+      "name": "Pharmacy Delivery",
+      "modules": [
+        "orders",
+        "address_book",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "dispatch_board",
+        "live_tracking",
+        "driver_pwa",
+        "customer_tracking",
+        "notifications_hub",
+        "delivery_preferences",
+        "fleet",
+        "assets",
+        "cold_chain",
+        "drivers",
+        "compliance",
+        "pricing",
+        "invoicing",
+        "ticketing",
+        "feedback",
+        "dashboards"
+      ]
+    },
+    "chauffeur": {
+      "name": "Chauffeur / Fleet Service",
+      "modules": [
+        "orders",
+        "route_optimization",
+        "recurring_routes",
+        "dispatch_board",
+        "live_tracking",
+        "driver_pwa",
+        "fleet",
+        "maintenance",
+        "fuel",
+        "telematics",
+        "drivers",
+        "attendance",
+        "payroll",
+        "pricing",
+        "invoicing",
+        "payments",
+        "expenses",
+        "dashboards",
+        "reports",
+        "compliance"
+      ]
+    },
+    "field_service": {
+      "name": "Field-Service Dispatch",
+      "modules": [
+        "orders",
+        "address_book",
+        "route_optimization",
+        "dynamic_reopt",
+        "dispatch_board",
+        "auto_assignment",
+        "live_tracking",
+        "driver_pwa",
+        "eta_prediction",
+        "chat",
+        "exception_center",
+        "fleet",
+        "drivers",
+        "attendance",
+        "payroll",
+        "pricing",
+        "ticketing",
+        "feedback",
+        "automation",
+        "dashboards"
+      ]
+    },
+    "freight": {
+      "name": "Freight / Last-Mile Carrier",
+      "modules": [
+        "orders",
+        "address_book",
+        "pickups",
+        "multi_leg",
+        "cod",
+        "pod",
+        "attempts",
+        "route_optimization",
+        "territories",
+        "dispatch_board",
+        "fleet_mix",
+        "live_tracking",
+        "fleet",
+        "hubs",
+        "cross_dock",
+        "drivers",
+        "subcontractors",
+        "pricing",
+        "invoicing",
+        "cod_settlement",
+        "sustainability",
+        "dashboards",
+        "reports",
+        "public_api"
+      ]
+    },
+    "franchise": {
+      "name": "Franchise Network",
+      "modules": [
+        "orders",
+        "address_book",
+        "cod",
+        "pod",
+        "route_optimization",
+        "territories",
+        "dispatch_board",
+        "live_tracking",
+        "customer_tracking",
+        "hubs",
+        "drivers",
+        "pricing",
+        "invoicing",
+        "cod_settlement",
+        "crm",
+        "franchise",
+        "white_label",
+        "dashboards",
+        "reports",
+        "saas_billing"
+      ]
+    },
+    "custom": {
+      "name": "Custom",
+      "modules": [
+        "orders",
+        "address_book",
+        "pod",
+        "route_optimization",
+        "dispatch_board",
+        "live_tracking",
+        "fleet",
+        "drivers",
+        "pricing",
+        "dashboards"
+      ]
+    }
+  }
+}

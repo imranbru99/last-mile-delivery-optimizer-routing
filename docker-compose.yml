@@ -1,0 +1,67 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    volumes:
+      - .:/var/www/html
+    environment:
+      APP_ENV: local
+      DB_HOST: mysql
+      DB_DATABASE: lastmile
+      DB_USERNAME: lastmile
+      DB_PASSWORD: secret
+      REDIS_HOST: redis
+      QUEUE_CONNECTION: redis
+      CACHE_STORE: redis
+      SESSION_DRIVER: redis
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mariadb:11.8
+    ports:
+      - "${FORWARD_DB_PORT:-3306}:3306"
+    environment:
+      MYSQL_DATABASE: lastmile
+      MYSQL_USER: lastmile
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - lmdo-mysql:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${FORWARD_REDIS_PORT:-6379}:6379"
+
+  horizon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: php artisan horizon
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - app
+      - redis
+      - mysql
+
+  reverb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: php artisan reverb:start --host=0.0.0.0 --port=8080
+    ports:
+      - "${FORWARD_REVERB_PORT:-8080}:8080"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - app
+      - redis
+
+volumes:
+  lmdo-mysql:

@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+    --lmdo-teal: #0d9488;
+    --lmdo-teal-deep: #0f766e;
+    --lmdo-ink: #0b1f2a;
+    --lmdo-bg: #f4f8f9;
+    --lmdo-surface: #ffffff;
+    --lmdo-muted: #4a6270;
+    --lmdo-border: #c5d8de;
+}
+
+.dark {
+    --lmdo-teal: #2dd4bf;
+    --lmdo-teal-deep: #14b8a6;
+    --lmdo-ink: #e8f4f6;
+    --lmdo-bg: #071418;
+    --lmdo-surface: #0c1e24;
+    --lmdo-muted: #8aa7b3;
+    --lmdo-border: #1e3a44;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+.lmdo-gradient {
+    background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, color-mix(in srgb, var(--lmdo-teal) 18%, transparent), transparent),
+        radial-gradient(ellipse 70% 50% at 90% 20%, color-mix(in srgb, var(--lmdo-ink) 8%, transparent), transparent),
+        linear-gradient(165deg, var(--lmdo-bg) 0%, color-mix(in srgb, var(--lmdo-teal-deep) 6%, var(--lmdo-bg)) 100%);
+}
+
+.lmdo-nav-link {
+    @apply rounded-lg px-3 py-2 text-[var(--lmdo-muted)] transition hover:bg-[var(--lmdo-muted)]/10 hover:text-[var(--lmdo-ink)];
+}
+
+.lmdo-footer-link {
+    @apply text-[var(--lmdo-muted)] transition hover:text-[var(--lmdo-teal)];
+}
+
+.lmdo-card {
+    @apply rounded-2xl border border-[var(--lmdo-border)]/70 bg-[var(--lmdo-surface)]/90 p-5 shadow-sm backdrop-blur-sm;
+}
+
+.lmdo-btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-[var(--lmdo-teal-deep)] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[var(--lmdo-teal)]/20 transition hover:bg-[var(--lmdo-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lmdo-teal)];
+}
+
+.lmdo-btn-outline {
+    @apply inline-flex items-center justify-center rounded-xl border border-[var(--lmdo-border)] bg-transparent px-5 py-2.5 text-sm font-semibold text-[var(--lmdo-ink)] transition hover:border-[var(--lmdo-teal)] hover:text-[var(--lmdo-teal)];
+}
+
+.lmdo-btn-ghost {
+    @apply inline-flex items-center justify-center gap-1 rounded-lg px-2.5 py-2 text-sm text-[var(--lmdo-muted)] transition hover:bg-[var(--lmdo-muted)]/10 hover:text-[var(--lmdo-ink)];
+}
+
+.lmdo-input {
+    @apply rounded-xl border border-[var(--lmdo-border)] bg-[var(--lmdo-bg)] px-3 py-2 text-[var(--lmdo-ink)] placeholder:text-[var(--lmdo-muted)]/70 focus:border-[var(--lmdo-teal)] focus:outline-none focus:ring-1 focus:ring-[var(--lmdo-teal)];
+}
+
+.lmdo-stat {
+    @apply rounded-2xl border border-[var(--lmdo-border)]/70 bg-[var(--lmdo-surface)]/90 p-5 shadow-sm backdrop-blur-sm text-center sm:text-left;
+}
+
+.lmdo-stat-value {
+    @apply font-display text-3xl font-bold text-[var(--lmdo-teal-deep)] dark:text-[var(--lmdo-teal)];
+}
+
+.lmdo-stat-label {
+    @apply mt-1 text-sm text-[var(--lmdo-muted)];
+}
+
+.lmdo-prose h2 {
+    @apply mt-8 font-display text-xl font-semibold text-[var(--lmdo-ink)];
+}
+
+.lmdo-prose p,
+.lmdo-prose ul {
+    @apply mt-3 text-[var(--lmdo-muted)] leading-relaxed;
+}
+
+.lmdo-prose ul {
+    @apply list-disc pl-5;
+}
+
+.lmdo-prose a {
+    @apply text-[var(--lmdo-teal-deep)] underline-offset-2 hover:underline dark:text-[var(--lmdo-teal)];
+}
+
+.lmdo-prose code {
+    @apply rounded bg-[var(--lmdo-muted)]/10 px-1 py-0.5 font-mono text-xs text-[var(--lmdo-ink)];
+}
+
+#lmdo-hero-map,
+#lmdo-demo-map {
+    z-index: 0;
+}
+
+.leaflet-container {
+    background: var(--lmdo-bg);
+    font-family: var(--font-sans);
+}

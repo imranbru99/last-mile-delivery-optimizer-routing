@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: Last-Mile Delivery Optimizer API
+  version: 1.0.0
+  description: REST API v1 (Sanctum bearer tokens, tenant-scoped).
+servers:
+  - url: /api/v1
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+  /shipments:
+    get:
+      summary: List shipments for authenticated tenant
+      security:
+        - sanctum: []
+      parameters:
+        - in: query
+          name: status
+          schema:
+            type: string
+        - in: query
+          name: per_page
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Paginated shipment list
+    post:
+      summary: Create shipment
+      security:
+        - sanctum: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [tracking_code, pickup_address_id, delivery_address_id]
+      responses:
+        '201':
+          description: Created
+  /shipments/{id}:
+    get:
+      summary: Show shipment
+      security:
+        - sanctum: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Shipment detail
+components:
+  securitySchemes:
+    sanctum:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
